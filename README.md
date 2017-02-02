@@ -10,7 +10,7 @@ But this is enough to have a play with some STRANDS software and connect it to o
 
 ```
 docker run -it --rm \
-    --user=$USER \
+    --user=`id -u` \
     --env="DISPLAY" \
     --workdir="/home/$USER" \
     --volume="/home/$USER:/home/$USER" \
