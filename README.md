@@ -19,7 +19,7 @@ docker run -it --rm \
     --volume="/etc/shadow:/etc/shadow:ro" \
     --volume="/etc/sudoers.d:/etc/sudoers.d:ro" \
     --volume="/tmp/.X11-unix:/tmp/.X11-unix:rw" \
-    strands/strands-base
+    strands/strands-base /bin/bash
 ```
 
 ## Building locally
