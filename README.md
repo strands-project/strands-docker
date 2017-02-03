@@ -8,7 +8,11 @@ Do run an interactive session in the fully installed STRANDS base system, simply
 
 to launch an interactive session. In there, most STRANDS packages are available, however, access to any local hardware (GPU) is not directly possible, there is more documentation for this at http://wiki.ros.org/docker/Tutorials/Hardware%20Acceleration
 
-But this is enough to have a play with some STRANDS software and connect it to other ROS components as required. If you want to run this with your local user and actually have the docker container access your X server, run something like:
+But this is enough to have a play with some STRANDS software and connect it to other ROS components as required. 
+
+## Running on a Linux host
+
+If you want to run this with your local user and actually have the docker container access your X server, run something like:
 
 ```
 docker run -it --rm \
@@ -23,6 +27,22 @@ docker run -it --rm \
     --volume="/tmp/.X11-unix:/tmp/.X11-unix:rw" \
     strands/strands-base /bin/bash
 ```
+
+## Running on OSX/Windows
+
+This is a useful guide for running X-enabled docker images on OSX: https://blog.bennycornelissen.nl/bwc-gui-apps-in-docker-on-osx/
+
+and here is a gist run this on a MAC: https://gist.github.com/marc-hanheide/d9b4bb6057665acf7524c7b79827f1c8
+
+Requirements:
+* install docker on OSX: https://docs.docker.com/docker-for-mac/
+* create a docker machine: `docker-machine create --driver virtualbox --virtualbox-memory 2048 docker-vm`
+* `source docker-x.sh` from https://gist.github.com/marc-hanheide/d9b4bb6057665acf7524c7b79827f1c8
+* run `docker_run strands/strands-base`
+
+
+
+# Builds
 
 ## Building locally
 build locally via `docker build --tag ros:strands --network host`
