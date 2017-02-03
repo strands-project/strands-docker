@@ -1,3 +1,5 @@
+[![](https://images.microbadger.com/badges/image/strands/strands-base.svg)](https://microbadger.com/images/strands/strands-base "Get your own image badge on microbadger.com"  d )
+
 # STRANDS distro docker image(s)
 
 Do run an interactive session in the fully installed STRANDS base system, simply make sure you have [docker installed on your machine](https://docs.docker.com/engine/installation/), and then you can simply run
