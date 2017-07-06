@@ -1,10 +1,12 @@
-[![](https://images.microbadger.com/badges/image/strands/strands-base.svg)](https://microbadger.com/images/strands/strands-base "Get your own image badge on microbadger.com"  d )
+[![](https://images.microbadger.com/badges/image/strands/strands-docker:kinetic.svg)](https://microbadger.com/images/strands/strands-docker:kinetic "Get your own image badge on microbadger.com")
+
+[![](https://images.microbadger.com/badges/version/strands/strands-docker:kinetic.svg)](https://microbadger.com/images/strands/strands-docker:kinetic "Get your own version badge on microbadger.com")
 
 # STRANDS distro docker image(s)
 
 Do run an interactive session in the fully installed STRANDS base system, simply make sure you have [docker installed on your machine](https://docs.docker.com/engine/installation/), and then you can simply run
 
-`docker run -it --rm strands/strands-base /bin/bash` 
+`docker run -it --rm strands/strands-docker:kinetic /bin/bash` 
 
 to launch an interactive session. In there, most STRANDS packages are available, however, access to any local hardware (GPU) is not directly possible, there is more documentation for this at http://wiki.ros.org/docker/Tutorials/Hardware%20Acceleration
 
@@ -25,7 +27,7 @@ docker run -it --rm \
     --volume="/etc/shadow:/etc/shadow:ro" \
     --volume="/etc/sudoers.d:/etc/sudoers.d:ro" \
     --volume="/tmp/.X11-unix:/tmp/.X11-unix:rw" \
-    strands/strands-base /bin/bash
+    strands/strands-docker:kinetic /bin/bash
 ```
 
 ## Running on OSX/Windows
@@ -38,18 +40,18 @@ Requirements:
 * install docker on OSX: https://docs.docker.com/docker-for-mac/
 * create a docker machine: `docker-machine create --driver virtualbox --virtualbox-memory 2048 docker-vm`
 * `source docker-x.sh` from https://gist.github.com/marc-hanheide/d9b4bb6057665acf7524c7b79827f1c8
-* run `docker_run strands/strands-base`
+* run `docker_run -it strands/strands-docker:kinetic`
 
 
 
 # Builds
 
 ## Building locally
-build locally via `docker build --tag ros:strands --network host`
+build locally via `docker build --tag strands/strands-docker:kinetic --network host .`
 
 ## Automated builds on hub.docker.com
 
-This repository is set up to release automatically a STRANDS docker image into the official docker repository at https://hub.docker.com/r/strands/strands-base/
+This repository is set up to release automatically a STRANDS docker image into the official docker repository at https://hub.docker.com/r/strands/strands-docker/
 
 
 
