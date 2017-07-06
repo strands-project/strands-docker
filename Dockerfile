@@ -33,6 +33,7 @@ RUN bash -c 'source /opt/ros/kinetic/setup.bash;\
 	cat strands.rosinstall; \
 	wstool init; \
 	wstool merge strands.rosinstall; \
-	wstool update \
+	wstool update; \
+	rosdep install -y --as-root=apt:false -i --from-paths . \
 '
 
