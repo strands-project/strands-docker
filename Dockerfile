@@ -36,4 +36,4 @@ RUN bash -c 'source /opt/ros/kinetic/setup.bash;\
 	wstool update; \
 	rosdep install -y --as-root=apt:false -i --from-paths . \
 '
-RUN apt-get install -y python-bloom 
+RUN apt-get install -y python-bloom vim nano less 
