@@ -34,6 +34,5 @@ RUN bash -c 'source /opt/ros/indigo/setup.bash;\
 	wstool init; \
 	wstool merge strands.rosinstall; \
 	wstool update; \
-	rosdep install -y --as-root=apt:false -i --from-paths . \
 '
 
