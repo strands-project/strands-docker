@@ -35,4 +35,4 @@ RUN bash -c 'source /opt/ros/indigo/setup.bash;\
 	wstool merge strands.rosinstall; \
 	wstool update; \
 '
-
+RUN apt-get install -y python-bloom vim nano less 
